@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    gap: 10px;
   }
   
   .heading {
@@ -21,6 +22,16 @@
     display: flex;
     flex-direction: column;
     border: solid black 1px;
+  }
+
+  #result-container, #announce-container {
+    border: black 2px solid;
+    width: 303px;
+    height: 40px;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .row {

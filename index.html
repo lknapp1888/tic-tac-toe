@@ -10,23 +10,26 @@
 <body>
     <div class="game-container">
         <h1 class="heading">Tic Tac Toe</h1>
+        <div id="announce-container">Player 1's turn (O)</div>
         <div class="board">
           <div class="row">
+            <div data-squareNum="0" class="square"></div>
             <div data-squareNum="1" class="square"></div>
             <div data-squareNum="2" class="square"></div>
-            <div data-squareNum="3" class="square"></div>
           </div>
           <div class="row">
+            <div data-squareNum="3" class="square"></div>
             <div data-squareNum="4" class="square"></div>
             <div data-squareNum="5" class="square"></div>
-            <div data-squareNum="6" class="square"></div>
           </div>
           <div class="row">
+            <div data-squareNum="6" class="square"></div>
             <div data-squareNum="7" class="square"></div>
             <div data-squareNum="8" class="square"></div>
-            <div data-squareNum="9" class="square"></div>
           </div>
         </div>
+        <div id="result-container"></div>
+        <button id="reset-btn">RESET!</button>
       </div>
       
     <script src="script.js" defer></script>
