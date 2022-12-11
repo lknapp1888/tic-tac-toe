@@ -20,6 +20,7 @@ const playGame = (function() {
 
     gridSquare.forEach(e => e.addEventListener('click', e => {
         let gridNum = e.target.attributes[0].value;
+            if (e.target.textContent.length > 0) return;
             if (playerOne.active === true) {
                 GameBoard.addO(gridNum)
                 playerOne.toggleActive();
