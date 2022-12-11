@@ -17,19 +17,33 @@ const GameBoard = (function() {
 const playGame = (function() {
     const gridSquare = document.querySelectorAll('.square');
 
+
     gridSquare.forEach(e => e.addEventListener('click', e => {
         let gridNum = e.target.attributes[0].value;
-            GameBoard.addO(gridNum)
+            if (playerOne.active === true) {
+                GameBoard.addO(gridNum)
+                playerOne.toggleActive();
+                playerTwo.toggleActive();
+                return;
+            }
+            if (playerOne.active === false) {
+                GameBoard.addX(gridNum)
+                playerOne.toggleActive();
+                playerTwo.toggleActive();
+                return;
+            }
     }))
 })();
 
 
+const player = function(active) {
+    toggleActive = function() {
+        this.active = !this.active;
+    }
+    return {active, toggleActive}
+}
 
-// const player = function(name, playerNum) {
-//     return {name, playerNum}
-// }
+const playerOne = player(true);
+const playerTwo = player(false);
 
-// const playerOne = player('Lewis', 1);
-// const playerTwo = player('Fraser', 2);
-// console.log(playerOne)
 
