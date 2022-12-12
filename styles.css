@@ -16,8 +16,10 @@
     font-weight: bold;
     margin-bottom: 20px;
   }
-  
-  
+  .board-container {
+    display: flex;
+    gap: 10px;
+  }
   .board {
     display: flex;
     flex-direction: column;
@@ -32,6 +34,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .name-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
   
   .row {

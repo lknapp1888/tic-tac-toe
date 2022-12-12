@@ -14,6 +14,7 @@ const GameBoard = (function() {
         square.textContent = 'O'
         this.checkWinner()
     }
+
     const checkWinner = function() {
         let arr = this.gameBoard;
         for (let i = 0; i < arr.length; i += 3) {
@@ -62,7 +63,7 @@ const GameBoard = (function() {
         let announceBox = document.getElementById('announce-container');
         let resultBox = document.getElementById('result-container');
         gridSquare.forEach(e => e.textContent = '')
-        announceBox.textContent = `Player 1's turn (O)`;
+        announceBox.textContent = `${playerOne.name}'s turn (O)`;
         playerOne.result = '';
         playerTwo.result = '';
         resultBox.textContent = ''
@@ -75,6 +76,7 @@ const GameBoard = (function() {
 const playGame = (function() {
     let gridSquare = document.querySelectorAll('.square');
     let announceBox = document.getElementById('announce-container')
+    let addPlayerBtn = document.querySelectorAll('.addPlayerBtn')
     gridSquare.forEach(e => e.addEventListener('click', e => {
         let gridNum = e.target.attributes[0].value;
             if (e.target.textContent.length > 0) return;
@@ -83,17 +85,24 @@ const playGame = (function() {
                 GameBoard.addO(gridNum)
                 playerOne.toggleActive();
                 playerTwo.toggleActive();
-                announceBox.textContent = `Player 2's turn (X)`;
+                announceBox.textContent = `${playerTwo.name}'s turn (X)`;
                 return;
             }
             if (playerOne.active === false) {
                 GameBoard.addX(gridNum)
                 playerOne.toggleActive();
                 playerTwo.toggleActive();
-                announceBox.textContent = `Player 1's turn (O)`;
+                announceBox.textContent = `${playerOne.name}'s turn (O)`;
                 return;
             }
     }))
+    addPlayerBtn.forEach(e => e.addEventListener('click', e => {
+        let btnNum = e.target.attributes[1].value;
+        let player = document.querySelector(`[data-player-input="${btnNum}"]`);
+        if (player.id === 'player1') {playerOne.name = player.value}
+        if (player.id === 'player2') {playerTwo.name = player.value}
+    }))
+
 })();
 
 // player factory function
@@ -104,7 +113,7 @@ const player = function(name, active) {
     return {name, active, toggleActive, result: ''}
 }
 
-const playerOne = player(`O's`, true);
-const playerTwo = player(`X's`, false);
+const playerOne = player(`player 1`, true);
+const playerTwo = player(`player 2`, false);
 
 

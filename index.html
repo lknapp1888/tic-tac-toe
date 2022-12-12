@@ -10,26 +10,41 @@
 <body>
     <div class="game-container">
         <h1 class="heading">Tic Tac Toe</h1>
-        <div id="announce-container">Player 1's turn (O)</div>
-        <div class="board">
-          <div class="row">
-            <div data-squareNum="0" class="square"></div>
-            <div data-squareNum="1" class="square"></div>
-            <div data-squareNum="2" class="square"></div>
+        <div id="announce-container"></div>
+        <div class="board-container">
+          <div class="name-entry">
+            <label for="player1">Player 1 enter name: </label>
+            <input type="text" name="player1" id="player1" data-player-input="1">
+            <button class="addPlayerBtn" data-player-btn="1">enter</button>
           </div>
-          <div class="row">
-            <div data-squareNum="3" class="square"></div>
-            <div data-squareNum="4" class="square"></div>
-            <div data-squareNum="5" class="square"></div>
+          <div class="board">
+            <div class="row">
+              <div data-squareNum="0" class="square"></div>
+              <div data-squareNum="1" class="square"></div>
+              <div data-squareNum="2" class="square"></div>
+            </div>
+            <div class="row">
+              <div data-squareNum="3" class="square"></div>
+              <div data-squareNum="4" class="square"></div>
+              <div data-squareNum="5" class="square"></div>
+            </div>
+            <div class="row">
+              <div data-squareNum="6" class="square"></div>
+              <div data-squareNum="7" class="square"></div>
+              <div data-squareNum="8" class="square"></div>
+            </div>
           </div>
-          <div class="row">
-            <div data-squareNum="6" class="square"></div>
-            <div data-squareNum="7" class="square"></div>
-            <div data-squareNum="8" class="square"></div>
+          <div class="name-entry">
+            <label for="player1">Player 2 enter name: </label>
+            <input type="text" name="player2" id="player2" data-player-input="2">
+            <button class="addPlayerBtn" data-player-btn="2">enter</button>
           </div>
         </div>
         <div id="result-container"></div>
-        <button id="reset-btn">RESET!</button>
+        <div class="btn-container">
+          <button id="start-btn">Start game</button>
+          <button id="reset-btn">RESET!</button>
+        </div>
       </div>
       
     <script src="script.js" defer></script>
