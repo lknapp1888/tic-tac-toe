@@ -1,6 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+* {
+  --background-color: #white;
+  --secondary-color: white;
+  --border-color: #000000;
+  --modal-text-color: black;
+  --not-read-color: red;
+  --read-color: green;
+}
 
+@font-face {
+  font-family: 'manrope';
+  src: url(fonts/Manrope-VariableFont_wght.ttf);
+  font-style: normal;
+}
 
+body {
+  font-family: manrope;
+}
 
 .game-container {
     display: flex;
@@ -26,6 +41,15 @@
     border: solid black 1px;
   }
 
+  .scoreboard {
+    display: flex;
+    gap: 10px;
+  }
+
+  .scoreboard div {
+    font-size: 2em;
+  }
+
   #result-container, #announce-container {
     border: black 2px solid;
     width: 303px;
@@ -39,7 +63,7 @@
   .name-entry {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 10px;
   }
   
   .row {
@@ -54,5 +78,77 @@
     justify-content: center;
     align-items: center;
     font-size: 6em;
+  }
+
+  .input-container input {
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    height: 25px;
+  }
+
+  .btn-container {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .std-btn {
+    appearance: none;
+    background-color: transparent;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 60px;
+    outline: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: clamp(50px, 100%, 200px);
+    will-change: transform;
+}
+
+  .std-btn {
+    border: 2px solid var(--border-color);
+  }
+  .std-btn.active {
+    border: 2px solid var(--read-color);
+  }
+
+  .std-btn.inactive {
+    border: 2px solid var(--not-read-color);
+  }
+
+  .std-btn.inactive:hover {
+    color: #fff;
+    background-color: var(--not-read-color);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+
+  .std-btn.active:hover {
+    color: #fff;
+    background-color: var(--read-color);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .std-btn:disabled{
+    pointer-events: none;
+  }
+  
+  .std-btn:hover{
+    color: #fff;
+    background-color: var(--border-color);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
   }
   

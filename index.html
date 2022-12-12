@@ -14,8 +14,8 @@
         <div class="board-container">
           <div class="name-entry">
             <label for="player1">Player 1 enter name: </label>
-            <input type="text" name="player1" id="player1" data-player-input="1">
-            <button class="addPlayerBtn" data-player-btn="1">enter</button>
+            <input type="text" name="player1" id="player1" data-player-input="1" minlength="1" maxlength="20">
+            <button class="addPlayerBtn std-btn" data-player-btn="1">enter</button>
           </div>
           <div class="board">
             <div class="row">
@@ -37,13 +37,18 @@
           <div class="name-entry">
             <label for="player1">Player 2 enter name: </label>
             <input type="text" name="player2" id="player2" data-player-input="2">
-            <button class="addPlayerBtn" data-player-btn="2">enter</button>
+            <button class="addPlayerBtn std-btn" data-player-btn="2">enter</button>
           </div>
+        </div>
+        <div class="scoreboard">
+          <div data-player-disp="1">...</div>
+          <div>vs</div>
+          <div data-player-disp="2">...</div>
         </div>
         <div id="result-container"></div>
         <div class="btn-container">
-          <button id="start-btn">Start game</button>
-          <button id="reset-btn">RESET!</button>
+          <button id="start-btn" class="std-btn inactive">Start game</button>
+          <button id="reset-btn" class="std-btn">Play again</button>
         </div>
       </div>
       
